@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var Sorter_1 = __importDefault(require("./Sorter"));
+var NumbersCollection_1 = __importDefault(require("./NumbersCollection"));
+var CharactersCollection_1 = __importDefault(require("./CharactersCollection"));
+var LinkedList_1 = __importDefault(require("./LinkedList"));
+var numbers = new NumbersCollection_1.default([10, 2, -1, 0]);
+var sorter = new Sorter_1.default(numbers);
+sorter.sort();
+console.log('sorted', sorter.value);
+var words = new CharactersCollection_1.default('hello world');
+var sortedWords = new Sorter_1.default(words);
+sortedWords.sort();
+console.log('words', sortedWords.value);
+var linkedList = new LinkedList_1.default();
+linkedList.add(411);
+linkedList.add(540);
+linkedList.add(-5);
+var listSorter = new Sorter_1.default(linkedList);
+linkedList.print();
+listSorter.sort();
+linkedList.print();
